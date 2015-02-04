@@ -31,7 +31,7 @@ Write a program that prompts the user to enter a password and displays Valid Pas
 
 //////////////////////////////////////////////////////////////
 
-6.21 (Phone keypads) The international standard letter/number mapping for telephones is shown in Programming Exercise 4.15.
+(Phone keypads) The international standard letter/number mapping for telephones is shown in Programming Exercise 4.15.
 Write a method that returns a number, given an uppercase letter, as follows:
 int getNumber(char uppercaseLetter)
 
@@ -51,7 +51,7 @@ Here is a sample run of the program:
 
 //////////////////////////////////////////////////////////////
 
-6.27 (Emirp) An emirp (prime spelled backward) is a nonpalindromic prime number whose reversal is also a prime.
+(Emirp) An emirp (prime spelled backward) is a nonpalindromic prime number whose reversal is also a prime.
 For example, 17 is a prime and 71 is a prime, so 17 and 71 are emirps. Write a program that displays the first 100 emirps.
 
 Display 10 numbers per line, separated by exactly one space, as follows:
@@ -61,7 +61,7 @@ Display 10 numbers per line, separated by exactly one space, as follows:
 
 //////////////////////////////////////////////////////////////
 
-6.29 (Twin primes) Twin primes are a pair of prime numbers that differ by 2.
+(Twin primes) Twin primes are a pair of prime numbers that differ by 2.
 For exam- ple, 3 and 5 are twin primes, 5 and 7 are twin primes, and 11 and 13 are twin primes.
 Write a program to find all twin primes less than 1,000. Display the output as follows:
 
