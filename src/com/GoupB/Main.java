@@ -13,15 +13,21 @@ public class Main {
         // send selection to the switch
         switch (selection){
             case 1:
+                //call method
                 break;
             case 2:
+                //call method
                 break:
             case 3:
+                //call method
                 break;
             case 4:
+                //call method
                 break;
             default:
-                System.out.print("somthing happened");
+                //error
+                System.out.print("ERROR: selection can't be less than 1 or 4 \");
+                System.exit(0);
                 break;
         }
 

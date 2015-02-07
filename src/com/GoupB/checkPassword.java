@@ -7,5 +7,7 @@ package com.GoupB;
 import java.util.*;
 
 public class checkPassword {
-    displayMenu.
+
+
+    displayMenu.passwordMenu();
 }

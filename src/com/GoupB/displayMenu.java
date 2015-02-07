@@ -29,7 +29,7 @@ public class displayMenu {
         return c;
     }
     // somone comment this too lazy
-    public static char passwordMenu(){
+    public static char passwordMenu[]{
         System.out.print("Please enter your password");
         Scanner a = new Scanner(System.in);
         char b = a.next();
