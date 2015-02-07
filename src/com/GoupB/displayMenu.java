@@ -28,7 +28,7 @@ public class displayMenu {
         }
         return c;
     }
-    // somone comment this too lazy
+    // Asks the user to input their password
     public static char passwordMenu[]{
         System.out.print("Please enter your password");
         Scanner a = new Scanner(System.in);
@@ -46,5 +46,48 @@ public class displayMenu {
 
     public static void twinPrimesMenu(){
 
+	    public static void main(String[] args) {
+		printPrimeNumbers(35);
+		
+	}
+	public static void printPrimeNumbers(int numberOfPrimes) {
+		final int NUMBER_OF_PRIMES_PER_LINE = 2;
+		int count = 0;
+		int number = 3;
+		int countOne = 0;
+		int numberOne = 5;
+		
+		while (count < numberOfPrimes && countOne < numberOfPrimes){
+			
+			if ( isPrime(number) && isPrime(numberOne)){
+				count++;
+				countOne++;
+				if(count % NUMBER_OF_PRIMES_PER_LINE == 0 && count % NUMBER_OF_PRIMES_PER_LINE == 0){
+					System.out.printf("(" + number + "," + numberOne + ")\n");
+				}
+				else
+					System.out.printf("(" + number + "," + numberOne + ")\n");
+			}
+			number++;
+			numberOne++;
+		}
+	}
+	public static boolean isPrime(int number) {
+		for ( int divisor = 2; divisor <=number / 2; divisor++){
+			if (number % divisor == 0){	
+		return false;
+			}
+		}
+		return true;
+	}
+	public static boolean isPrime1(int numberOne) {
+		for ( int divisorOne = 2; divisorOne <=numberOne / 2; divisorOne++){
+			if (numberOne % divisorOne == 0){	
+		return false;
+			}
+		}
+		return true;
+	    }
     }
+}
 }
