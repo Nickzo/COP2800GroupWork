@@ -7,6 +7,8 @@ package com.GoupB;
 import com.sun.org.apache.xerces.internal.impl.xs.SchemaNamespaceSupport;
 
 import java.util.*;
+import java.util.Scanner;
+
 
 public class displayMenu {
 
@@ -30,10 +32,38 @@ public class displayMenu {
     }
     // somone comment this too lazy
     public static char passwordMenu[]{
-        System.out.print("Please enter your password");
-        Scanner a = new Scanner(System.in);
-        char b = a.next();
-        return b;
+     public static void main(String[] args) {
+		 Scanner input = new Scanner(System.in);
+		 System.out.print("Enter the password: ");
+		 String password = input.nextLine();
+		 System.out.println(IsValid(password));
+		 }//end of main
+		 public static String IsValid(String pass) {
+		 int digitCount = 0;
+		 if (pass.length() >= 8) {//checks is password length is less than or equal to 8
+		 for (char c : pass.toUpperCase().toCharArray()) {//to char array converts string to array
+		 if ((int) c >= 48 && (int) c <= 57)//ascii decimal value for numbers
+		 {
+		 // This is a digit
+		 digitCount++;
+		 } else if ((int) c >= 65 && (int) c <= 90)//ascii decimal values for capital letters
+		 {
+		 // This is an alphabetical character
+		 } else {
+		 // Other character that are not numbers or letters
+		 return "Invalid: password must consist of only letters and digits";
+		 }
+		 }//end of for
+		 if (digitCount < 2)//if there are less than 2 digits
+		 {
+		 return "Invalid: password must contain at least 2 digits";
+		 }
+		 }//end of outer if
+		 else {
+		 return "Invalid: password must have at least 8 characters";
+		 }//end of outer else
+		 return "Valid";
+		 }
     }
     
     
@@ -113,17 +143,100 @@ public static int getNumber(char upperCaseLetter){
     }//end of phonekeypads
 
     public static void EMIRPMenu(){
+    	 public static void main (String[] args)  
+     {  
+		 //the program will find the emirp up to 100
+          int[] p = new int[100];  
+          int count =0;  
+                   for (int i =2;count<100;i++)  
+             {  
+               if (isEmirp(i))  
+               {  
+                    p[count] = i;  
+                    count++;  
+               }   
+          }
+          for(int i =0;i<100;i++)  
+          {  
+               if ((i+1) % 10 == 0) 
+                    System.out.println(p[i]);  
+               else 
+                    System.out.print(p[i] + "\t");  
+          }
+     }//end main    
+	 public static int reverse (int num)  
+      {  
+          String s0 = Integer.toString(num);  
+          String s1 = "";  
+          {  
+               for(int i =s0.length()-1;i>=0;i--)  
+               {  
+                    s1+= s0.charAt(i);  
+               }  
+          }  
+          return Integer.parseInt(s1);  
+     }// end reverse
+     public static int reverse1(int num)  
+     {  
+          String str = Integer.toString(num);
+          String s1 = "";  
+          
+        
+          for(int i =str.length()-1;i>=0;i--)  
+          {  
+              s1+= str.charAt(i);  
+          }  
+          
+          return Integer.parseInt(s1);  
+	}  //end reverse1
+     public static boolean PalPrime(int num)  
+	{  
+    	 //The functions will choose whether the primes 
+    	 //meet the requirements of the function
+          String s2 = Integer.toString(num);  
+          if (isPrime(num))  
+          {  
+            
+               if(s2.equalsIgnoreCase(""+reverse1(num)))
+                   return true;
+          }  
+          else
+               return false;
+		return false;  
+     }// end PalPrime
+     public static boolean isEmirp(int num)  
+     {  
+          String s2 = Integer.toString(num);
+ 
+          if (isPrime(num) && isPrime(reverse(num)) && (PalPrime(num) == false))  
+               return true;  
+          else  
+               return false;  
+     }  //end isEmirp
+     public static boolean isPrime(int num)  
+	 {  
+          
+          for(int i =2;i<=Math.sqrt(num);i++)   
+          {  
+               if(num%i==0)   
+               {  
+                    return false;  
+               }  
+          }  
+          return true;  
+     }  //end isPrime
+}//end class
 
     }
 
     public static void twinPrimesMenu(){
+public class TwinPrimes {
+
 	public static void main(String[] args) {
-		printPrimeNumbers(35); //I don't know if this is the total for it so can someone test that this meets the requirements
-		
-		
-		
+		printPrimeNumbers(35);	
 	}
 	public static void printPrimeNumbers(int numberOfPrimes) {
+		//the constant and initializations are find for the functions
 		final int NUMBER_OF_PRIMES_PER_LINE = 2;
 		int count = 0;
 		int number = 3;
@@ -131,7 +244,7 @@ public static int getNumber(char upperCaseLetter){
 		int numberOne = 5;
 		
 		while (count < numberOfPrimes && countOne < numberOfPrimes){
-			
+			//the program will display the primes in , for example, (#,#).
 			if ( isPrime(number) && isPrime(numberOne)){
 				count++;
 				countOne++;
@@ -145,6 +258,8 @@ public static int getNumber(char upperCaseLetter){
 			numberOne++;
 		}
 	}
+	// Evaluates for each prime number so that the prime number will be displayed
+	//to the user correctly
 	public static boolean isPrime(int number) {
 		for ( int divisor = 2; divisor <=number / 2; divisor++){
 			if (number % divisor == 0){	
@@ -154,13 +269,15 @@ public static int getNumber(char upperCaseLetter){
 		return true;
 	}
 	public static boolean isPrime1(int numberOne) {
+
 		for ( int divisorOne = 2; divisorOne <=numberOne / 2; divisorOne++){
 			if (numberOne % divisorOne == 0){	
 		return false;
 			}
 		}
 		return true;
-	}
+	}//end main
+}//end class
 	
 }
 
